@@ -27,8 +27,8 @@
         }
     },
     "forwardPorts": [],
-    "postCreateCommand": ". .devcontainer/init.sh",
     "remoteUser": "vscode",
+    "postCreateCommand": ". .devcontainer/init.sh",
     "hostRequirements": {
         "memory": "4gb"
     }
