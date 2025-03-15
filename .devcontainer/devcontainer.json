@@ -1,0 +1,35 @@
+{
+    "name": "CMC Copilot dev environment",
+    "image": "mcr.microsoft.com/devcontainers/python:3.12",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            // This should match the version of Node.js in Github Actions workflows
+            "version": "20",
+            "nodeGypDependencies": false
+        },
+        "ghcr.io/devcontainers/features/azure-cli:1": {},
+        "ghcr.io/devcontainers/features/powershell:1": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-bicep",
+                "ms-python.python",
+                "esbenp.prettier-vscode",
+                "Vue.volar",
+                "ms-toolsai.jupyter"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": ".venv/bin/python",
+                "python.terminal.activateEnvInCurrentTerminal": true
+            }
+        }
+    },
+    "forwardPorts": [],
+    "postCreateCommand": "./.devcontainer/init.sh",
+    "remoteUser": "vscode",
+    "hostRequirements": {
+        "memory": "4gb"
+    }
+}
